@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ArrowUpRight, Moon, Sun } from 'lucide-react'
+import { ArrowUpRight, Check, Copy, Moon, Sun } from 'lucide-react'
 import { PERFIL } from './data.js'
 import { useHashRoute } from './lib.js'
 import Home, { Brilho } from './components/Home.jsx'
@@ -59,10 +59,33 @@ function Nav() {
   )
 }
 
+// mailto: não faz nada em quem não tem app de e-mail configurado (comum no
+// Windows com Gmail no navegador), então o botão copia o endereço.
+function BotaoEmail() {
+  const [copiado, setCopiado] = useState(false)
+  async function copiar() {
+    try {
+      await navigator.clipboard.writeText(PERFIL.email)
+      setCopiado(true)
+      setTimeout(() => setCopiado(false), 2500)
+    } catch {
+      window.location.href = `mailto:${PERFIL.email}`
+    }
+  }
+  return (
+    <button
+      type="button"
+      onClick={copiar}
+      className="inline-flex items-center gap-2 rounded-full border border-line px-6 py-3 text-sm font-semibold transition hover:border-ink"
+    >
+      {copiado ? <>E-mail copiado! <Check className="size-4 text-accent" /></> : <>E-mail <Copy className="size-4" /></>}
+    </button>
+  )
+}
+
 function Contato() {
   const links = [
     PERFIL.whatsapp && ['WhatsApp', PERFIL.whatsapp],
-    PERFIL.email && ['E-mail', `mailto:${PERFIL.email}`],
     PERFIL.linkedin && ['LinkedIn', PERFIL.linkedin],
     PERFIL.instagram && ['Instagram', PERFIL.instagram],
     ['GitHub', PERFIL.github],
@@ -85,7 +108,7 @@ function Contato() {
             <a
               key={rotulo}
               href={href}
-              target={href.startsWith('mailto') ? undefined : '_blank'}
+              target="_blank"
               rel="noreferrer"
               className={`inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition hover:gap-3 ${
                 n === 0 ? 'bg-accent text-on-accent' : 'border border-line hover:border-ink'
@@ -94,7 +117,11 @@ function Contato() {
               {rotulo} <ArrowUpRight className="size-4" />
             </a>
           ))}
+          {PERFIL.email && <BotaoEmail />}
         </Reveal>
+        {PERFIL.email && (
+          <p className="mt-6 font-mono text-sm text-muted select-all">{PERFIL.email}</p>
+        )}
       </div>
     </section>
   )
