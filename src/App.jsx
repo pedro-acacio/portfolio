@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { ArrowUpRight, Moon, Sun } from 'lucide-react'
 import { PERFIL } from './data.js'
 import { useHashRoute } from './lib.js'
-import Home from './components/Home.jsx'
+import Home, { Brilho } from './components/Home.jsx'
 import Projeto from './components/Projeto.jsx'
 import Reveal from './components/Reveal.jsx'
 
@@ -25,7 +25,7 @@ function useTema() {
     }
   }, [tema])
   const escuroAgora = () =>
-    tema ? tema === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches
+    tema ? tema === 'dark' : true
   return [escuroAgora, () => setTema(escuroAgora() ? 'light' : 'dark')]
 }
 
@@ -68,8 +68,9 @@ function Contato() {
     ['GitHub', PERFIL.github],
   ].filter(Boolean)
   return (
-    <section id="contato" className="scroll-mt-20 bg-ink text-bg">
-      <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">
+    <section id="contato" className="relative isolate scroll-mt-20 overflow-hidden border-t border-line bg-surface">
+      <Brilho />
+      <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">
         <Reveal>
           <p className="font-mono text-xs tracking-[0.2em] uppercase opacity-60">Contato</p>
           <h2 className="mt-5 max-w-3xl font-display text-[clamp(2.6rem,7vw,5.5rem)] leading-[0.95]">
@@ -87,7 +88,7 @@ function Contato() {
               target={href.startsWith('mailto') ? undefined : '_blank'}
               rel="noreferrer"
               className={`inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition hover:gap-3 ${
-                n === 0 ? 'bg-accent text-white' : 'border border-bg/25 hover:border-bg'
+                n === 0 ? 'bg-accent text-on-accent' : 'border border-line hover:border-ink'
               }`}
             >
               {rotulo} <ArrowUpRight className="size-4" />
@@ -119,8 +120,8 @@ export default function App() {
       <Nav />
       <main>{slug ? <Projeto key={slug} slug={slug} /> : <Home />}</main>
       <Contato />
-      <footer className="bg-ink text-bg">
-        <div className="mx-auto flex max-w-6xl flex-wrap justify-between gap-2 border-t border-bg/15 px-4 py-6 font-mono text-xs opacity-60 sm:px-6">
+      <footer className="bg-surface">
+        <div className="mx-auto flex max-w-6xl flex-wrap justify-between gap-2 border-t border-line px-4 py-6 font-mono text-xs text-muted sm:px-6">
           <span>© {new Date().getFullYear()} {PERFIL.nome}</span>
           <span>{PERFIL.cidade}</span>
         </div>

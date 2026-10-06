@@ -12,53 +12,66 @@ const ETAPAS = [
   ['04', 'No ar', 'Publicação com link próprio, ajustes finais e apoio depois da entrega.'],
 ]
 
+// Brilho verde de fundo + grade discreta, usados no topo e no contato.
+export function Brilho() {
+  return (
+    <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
+      <div className="absolute -top-40 right-[-10%] size-[42rem] rounded-full bg-[radial-gradient(closest-side,var(--glow),transparent)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(var(--line)_1px,transparent_1px),linear-gradient(90deg,var(--line)_1px,transparent_1px)] bg-[size:56px_56px] opacity-40 [mask-image:radial-gradient(ellipse_at_70%_20%,#000,transparent_70%)]" />
+    </div>
+  )
+}
+
 function Hero() {
   const noAr = PROJETOS.filter((p) => p.url).length
   return (
-    <section className="mx-auto max-w-6xl px-4 pt-16 pb-20 sm:px-6 md:pt-24 md:pb-28">
-      <Reveal>
-        <p className="font-mono text-xs tracking-[0.2em] text-muted uppercase">
-          {PERFIL.nome} — {PERFIL.titulo} · {PERFIL.cidade}
-        </p>
-      </Reveal>
-      <Reveal delay={80}>
-        <h1 className="mt-6 max-w-4xl font-display text-[clamp(2.9rem,8vw,6.5rem)] leading-[0.95] tracking-tight">
-          Sites que parecem <em className="text-accent">feitos</em> para a marca — porque foram.
-        </h1>
-      </Reveal>
-      <Reveal delay={160}>
-        <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted">{PERFIL.bio}</p>
-      </Reveal>
-      <Reveal delay={240} className="mt-10 flex flex-wrap items-center gap-x-10 gap-y-6">
-        <a
-          href="#projetos"
-          className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-bg transition hover:gap-3"
-        >
-          Ver projetos <ArrowRight className="size-4" />
-        </a>
-        <dl className="flex gap-8 text-sm">
-          <div>
-            <dt className="text-muted">Projetos</dt>
-            <dd className="font-display text-3xl">{PROJETOS.length}</dd>
+    <div className="relative isolate overflow-hidden">
+      <Brilho />
+      <section className="mx-auto max-w-6xl px-4 pt-16 pb-20 sm:px-6 md:pt-24 md:pb-28">
+        <Reveal>
+          <p className="font-mono text-xs tracking-[0.2em] text-muted uppercase">
+            {PERFIL.nome} — {PERFIL.titulo} · {PERFIL.cidade}
+          </p>
+        </Reveal>
+        <Reveal delay={80}>
+          <h1 className="mt-6 max-w-4xl font-display text-[clamp(2.9rem,8vw,6.5rem)] leading-[0.95] tracking-tight">
+            Sites que parecem <em className="text-accent">feitos</em> para a marca — porque foram.
+          </h1>
+        </Reveal>
+        <Reveal delay={160}>
+          <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted">{PERFIL.bio}</p>
+        </Reveal>
+        <Reveal delay={240} className="mt-10 flex flex-wrap items-center gap-x-10 gap-y-6">
+          <a
+            href="#projetos"
+            className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-on-accent transition hover:gap-3"
+          >
+            Ver projetos <ArrowRight className="size-4" />
+          </a>
+          <dl className="flex gap-8 text-sm">
+            <div>
+              <dt className="text-muted">Projetos</dt>
+              <dd className="font-display text-3xl">{PROJETOS.length}</dd>
+            </div>
+            <div>
+              <dt className="text-muted">No ar</dt>
+              <dd className="font-display text-3xl">{noAr}</dd>
+            </div>
+          </dl>
+          {/* Assinatura: a cor principal de cada marca atendida */}
+          <div className="flex -space-x-2" aria-label="Cores das marcas atendidas">
+            {PROJETOS.map((p) => (
+              <span
+                key={p.slug}
+                title={p.nome}
+                className="size-8 rounded-full ring-2 ring-bg outline-1 outline-offset-2 outline-ink/20"
+                style={{ background: p.cor }}
+              />
+            ))}
           </div>
-          <div>
-            <dt className="text-muted">No ar</dt>
-            <dd className="font-display text-3xl">{noAr}</dd>
-          </div>
-        </dl>
-        {/* Assinatura: a cor principal de cada marca atendida */}
-        <div className="flex -space-x-2" aria-label="Cores das marcas atendidas">
-          {PROJETOS.map((p) => (
-            <span
-              key={p.slug}
-              title={p.nome}
-              className="size-8 rounded-full ring-2 ring-bg"
-              style={{ background: p.cor }}
-            />
-          ))}
-        </div>
-      </Reveal>
-    </section>
+        </Reveal>
+      </section>
+    </div>
   )
 }
 
@@ -98,7 +111,7 @@ function Card({ p, i }) {
             <h3 className="font-display text-3xl leading-tight">{p.nome}</h3>
             <p className="mt-1 max-w-md text-sm leading-relaxed text-muted">{p.resumo}</p>
           </div>
-          <span className="mt-1 grid size-10 shrink-0 place-items-center rounded-full border border-line transition group-hover:border-ink group-hover:bg-ink group-hover:text-bg">
+          <span className="mt-1 grid size-10 shrink-0 place-items-center rounded-full border border-line transition group-hover:border-accent group-hover:bg-accent group-hover:text-on-accent">
             <ArrowRight className="size-4 transition group-hover:-rotate-45" />
           </span>
         </div>
@@ -156,7 +169,7 @@ function Sobre() {
             <a
               href={PERFIL.curriculo}
               download
-              className="mt-8 inline-flex items-center gap-2 rounded-full border border-ink px-6 py-3 text-sm font-semibold transition hover:bg-ink hover:text-bg"
+              className="mt-8 inline-flex items-center gap-2 rounded-full border border-ink px-6 py-3 text-sm font-semibold transition hover:border-accent hover:bg-accent hover:text-on-accent"
             >
               Baixar currículo (PDF) <Download className="size-4" />
             </a>

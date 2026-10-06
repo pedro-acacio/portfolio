@@ -11,38 +11,32 @@
   --color-muted: var(--muted);
   --color-line: var(--line);
   --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
 }
 
+/* Escuro é o padrão; o claro só entra pelo botão de tema. */
 :root {
-  --bg: #f3ede2;
-  --surface: #fbf8f2;
-  --ink: #1d1a16;
-  --muted: #6d655a;
-  --line: #ddd3c3;
-  --accent: #d24f23;
-  color-scheme: light;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #15130f;
-    --surface: #1e1b16;
-    --ink: #f1ebe0;
-    --muted: #a39a8c;
-    --line: #34302a;
-    --accent: #ef7148;
-    color-scheme: dark;
-  }
-}
-
-:root[data-theme="dark"] {
-  --bg: #15130f;
-  --surface: #1e1b16;
-  --ink: #f1ebe0;
-  --muted: #a39a8c;
-  --line: #34302a;
-  --accent: #ef7148;
+  --bg: #0b110f;
+  --surface: #111a17;
+  --ink: #e6eee9;
+  --muted: #8b9c94;
+  --line: #1f2c27;
+  --accent: #3ccf8e;
+  --on-accent: #04130c;
+  --glow: rgba(60, 207, 142, 0.13);
   color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg: #f3f6f4;
+  --surface: #ffffff;
+  --ink: #0d1a14;
+  --muted: #56665e;
+  --line: #d7e0db;
+  --accent: #127a4b;
+  --on-accent: #ffffff;
+  --glow: rgba(18, 122, 75, 0.09);
+  color-scheme: light;
 }
 
 html {
@@ -58,7 +52,7 @@ body {
 
 ::selection {
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
 }
 
 .reveal {
