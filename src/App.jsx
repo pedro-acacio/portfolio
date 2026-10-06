@@ -43,6 +43,7 @@ function Nav() {
         </a>
         <nav className="flex items-center gap-1 text-sm sm:gap-2">
           <a href="#projetos" className="hidden rounded-full px-3 py-1.5 text-muted hover:text-ink sm:block">Projetos</a>
+          <a href="#sobre" className="hidden rounded-full px-3 py-1.5 text-muted hover:text-ink sm:block">Sobre</a>
           <a href="#processo" className="hidden rounded-full px-3 py-1.5 text-muted hover:text-ink sm:block">Processo</a>
           <a href="#contato" className="rounded-full px-3 py-1.5 text-muted hover:text-ink">Contato</a>
           <button
@@ -72,8 +73,11 @@ function Contato() {
         <Reveal>
           <p className="font-mono text-xs tracking-[0.2em] uppercase opacity-60">Contato</p>
           <h2 className="mt-5 max-w-3xl font-display text-[clamp(2.6rem,7vw,5.5rem)] leading-[0.95]">
-            Tem um negócio que merece um site <em className="text-accent">à altura</em>?
+            Vamos construir algo <em className="text-accent">juntos</em>?
           </h2>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed opacity-70">
+            Aberto a vagas de Desenvolvedor Front-End e a projetos freelance.
+          </p>
         </Reveal>
         <Reveal delay={120} className="mt-10 flex flex-wrap gap-3">
           {links.map(([rotulo, href], n) => (

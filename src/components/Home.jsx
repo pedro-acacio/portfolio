@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { ArrowRight } from 'lucide-react'
-import { PERFIL, PROJETOS, TIPOS } from '../data.js'
+import { ArrowRight, Download } from 'lucide-react'
+import { PERFIL, PROJETOS, SOBRE, TIPOS } from '../data.js'
 import { textoSobre } from '../lib.js'
 import { BrowserFrame, PhoneFrame } from './Frames.jsx'
 import Reveal from './Reveal.jsx'
@@ -18,7 +18,7 @@ function Hero() {
     <section className="mx-auto max-w-6xl px-4 pt-16 pb-20 sm:px-6 md:pt-24 md:pb-28">
       <Reveal>
         <p className="font-mono text-xs tracking-[0.2em] text-muted uppercase">
-          {PERFIL.nome} — {PERFIL.cidade}
+          {PERFIL.nome} — {PERFIL.titulo} · {PERFIL.cidade}
         </p>
       </Reveal>
       <Reveal delay={80}>
@@ -145,6 +145,77 @@ function Projetos() {
   )
 }
 
+function Sobre() {
+  return (
+    <section id="sobre" className="scroll-mt-20 border-t border-line">
+      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-24">
+        <div className="grid gap-10 md:grid-cols-[1fr_1.4fr]">
+          <Reveal className="md:sticky md:top-28 md:self-start">
+            <h2 className="font-display text-5xl md:text-6xl">Sobre</h2>
+            <p className="mt-6 max-w-md leading-relaxed text-muted">{SOBRE.texto}</p>
+            <a
+              href={PERFIL.curriculo}
+              download
+              className="mt-8 inline-flex items-center gap-2 rounded-full border border-ink px-6 py-3 text-sm font-semibold transition hover:bg-ink hover:text-bg"
+            >
+              Baixar currículo (PDF) <Download className="size-4" />
+            </a>
+          </Reveal>
+
+          <div className="grid gap-12">
+            <Reveal delay={80}>
+              <h3 className="font-mono text-xs tracking-[0.2em] text-muted uppercase">Experiência</h3>
+              <ol className="mt-5 grid gap-7">
+                {SOBRE.experiencia.map((x) => (
+                  <li key={x.titulo} className="border-t border-line pt-5">
+                    <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                      <span className="font-display text-2xl">{x.titulo}</span>
+                      <span className="font-mono text-xs text-accent">{x.periodo}</span>
+                    </div>
+                    <ul className="mt-3 grid gap-1.5 text-sm leading-relaxed text-muted">
+                      {x.itens.map((t) => <li key={t}>{t}</li>)}
+                    </ul>
+                  </li>
+                ))}
+              </ol>
+            </Reveal>
+
+            <Reveal delay={120}>
+              <h3 className="font-mono text-xs tracking-[0.2em] text-muted uppercase">Formação</h3>
+              <ol className="mt-5 grid gap-4 sm:grid-cols-2">
+                {SOBRE.formacao.map((f) => (
+                  <li key={f.titulo} className="rounded-2xl border border-line bg-surface p-5">
+                    <span className="font-display text-2xl leading-tight">{f.titulo}</span>
+                    <p className="mt-1 text-sm text-muted">{f.lugar}</p>
+                    <p className="mt-3 font-mono text-xs text-accent">{f.periodo}</p>
+                  </li>
+                ))}
+              </ol>
+            </Reveal>
+
+            <Reveal delay={160}>
+              <h3 className="font-mono text-xs tracking-[0.2em] text-muted uppercase">Competências</h3>
+              <ul className="mt-5 flex flex-wrap gap-2">
+                {SOBRE.competencias.map((c) => (
+                  <li key={c} className="rounded-full border border-line px-3.5 py-1.5 text-sm">{c}</li>
+                ))}
+              </ul>
+              <p className="mt-4 text-sm text-muted">{SOBRE.idiomas}</p>
+            </Reveal>
+
+            <Reveal delay={200}>
+              <h3 className="font-mono text-xs tracking-[0.2em] text-muted uppercase">Certificações</h3>
+              <ul className="mt-5 grid gap-2 text-sm">
+                {SOBRE.certificacoes.map((c) => <li key={c} className="border-b border-line pb-2">{c}</li>)}
+              </ul>
+            </Reveal>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function Processo() {
   return (
     <section id="processo" className="scroll-mt-20 border-t border-line bg-surface">
@@ -169,6 +240,7 @@ export default function Home() {
     <>
       <Hero />
       <Projetos />
+      <Sobre />
       <Processo />
     </>
   )

@@ -1,6 +1,6 @@
 # Portfólio — Pedro Acácio
 
-Portfólio com os projetos feitos até aqui: Mahut Arquitetura, Hifive Discos & Bar,
+Portfólio e currículo, com os projetos feitos até aqui: Mahut Arquitetura, Hifive Discos & Bar,
 Amor à Palavra, FJ Barbearia, Blu Cookies Box, NestWise e Volver.
 
 ## Stack

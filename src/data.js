@@ -5,15 +5,50 @@
 
 export const PERFIL = {
   nome: 'Pedro Acácio',
-  titulo: 'Sites e apps sob medida',
-  bio: 'Crio landing pages e aplicações web para negócios reais — da identidade visual da marca até o site no ar, com domínio, WhatsApp e formulários funcionando.',
+  titulo: 'Desenvolvedor Front-End',
+  bio: 'Desenvolvedor front-end freelancer e estudante de Ciência da Computação na UNIFOR. Crio landing pages e web apps em React, JavaScript e Tailwind CSS para clientes reais — da identidade visual da marca até o site no ar.',
   cidade: 'Fortaleza, CE',
   github: 'https://github.com/pedro-acacio',
+  curriculo: '/curriculo-pedro-acacio.pdf',
   // Preencha para exibir os botões de contato no site:
-  email: '',
+  email: 'pedroacaciodesouzaneto@gmail.com',
   whatsapp: 'https://wa.me/5585996039656',
-  linkedin: 'https://www.linkedin.com/in/pedro-ac%C3%A1cio-72116/',
+  linkedin: 'https://www.linkedin.com/in/pedro-ac%C3%A1cio-721004316/',
   instagram: 'https://www.instagram.com/paneto__/',
+}
+
+// Seção "Sobre", espelhando o currículo.
+export const SOBRE = {
+  texto: 'Busco uma vaga de Desenvolvedor Front-End para contribuir com o produto, com atenção a UX/UI. Hoje aprofundo Next.js, TypeScript e testes automatizados.',
+  formacao: [
+    { titulo: 'Ciência da Computação', lugar: 'Universidade de Fortaleza (UNIFOR)', periodo: '2025–2028 · 4º semestre' },
+    { titulo: 'Desenvolvimento Full-Stack', lugar: 'Digital College', periodo: 'Em andamento' },
+  ],
+  experiencia: [
+    {
+      titulo: 'Desenvolvedor Web Freelancer',
+      periodo: '2024–atual',
+      itens: [
+        'Landing pages e web apps em React e Tailwind CSS para clientes locais: loja de discos, bar, barbearia, escritório de arquitetura e cafeteria.',
+        'Sistemas de design do zero: identidade de marca, fundamentos de CSS e componentes reutilizáveis.',
+        'Firebase (Firestore e Authentication) como backend em projetos web e mobile, incluindo um PWA com formulário em etapas e relatórios automáticos.',
+        'Versionamento com Git/GitHub e deploy em produção na Vercel e no GitHub Pages.',
+      ],
+    },
+    { titulo: 'Apoio em Marketing Digital – Igreja', periodo: '2023–atual', itens: ['Colaboração em equipe, organização e comunicação.'] },
+    { titulo: 'Professor Particular de Redação', periodo: '2024–2025', itens: ['Atendimento individualizado, comunicação clara e resolução de problemas.'] },
+  ],
+  competencias: [
+    'React', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Tailwind CSS', 'Firebase', 'PWA',
+    'Git & GitHub', 'Java · POO', 'UX/UI e design systems', 'Responsividade',
+  ],
+  certificacoes: [
+    'Java: Aplicando a Orientação a Objetos – Alura',
+    'Lógica de Programação com JavaScript – Alura',
+    'Praticando JavaScript: Laços de Repetição – Alura',
+    'Começando em Programação – Alura',
+  ],
+  idiomas: 'Inglês intermediário (leitura de documentação técnica)',
 }
 
 export const TIPOS = ['Todos', 'Landing page', 'Aplicação web']
