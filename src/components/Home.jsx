@@ -35,7 +35,7 @@ function Hero() {
         </Reveal>
         <Reveal delay={80}>
           <h1 className="mt-6 max-w-4xl font-display text-[clamp(2.9rem,8vw,6.5rem)] leading-[0.95] tracking-tight">
-            Sites que parecem <em className="text-accent">feitos</em> para a marca — porque foram.
+            Aplicações web <em className="text-accent">completas</em>, da interface ao banco de dados.
           </h1>
         </Reveal>
         <Reveal delay={160}>
