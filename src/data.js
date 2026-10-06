@@ -40,7 +40,7 @@ export const SOBRE = {
     'React', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Tailwind CSS', 'Firebase', 'PWA',
     'Git & GitHub', 'Java · POO', 'UX/UI e design systems', 'Responsividade',
   ],
-  idiomas: 'Inglês intermediário (leitura de documentação técnica)',
+  idiomas: 'Inglês intermediário',
 }
 
 export const TIPOS = ['Todos', 'Landing page', 'Aplicação web']
