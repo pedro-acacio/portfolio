@@ -44,22 +44,15 @@ export default function Projeto({ slug }) {
             <div>
               <p className="text-lg leading-relaxed opacity-85">{p.resumo}</p>
               {p.url ? (
-                <div className="mt-6 flex flex-wrap items-center gap-3">
-                  <a
-                    href={p.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition hover:gap-3"
-                    style={{ background: texto, color: p.fundo }}
-                  >
-                    Visitar o site <ArrowUpRight className="size-4" />
-                  </a>
-                  {p.privado && (
-                    <span className="inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-sm" style={{ borderColor: texto }}>
-                      <Lock className="size-4" /> Repositório privado
-                    </span>
-                  )}
-                </div>
+                <a
+                  href={p.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-6 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition hover:gap-3"
+                  style={{ background: texto, color: p.fundo }}
+                >
+                  Visitar o site <ArrowUpRight className="size-4" />
+                </a>
               ) : (
                 <span className="mt-6 inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-sm" style={{ borderColor: texto }}>
                   <Lock className="size-4" /> {p.status} · repositório privado

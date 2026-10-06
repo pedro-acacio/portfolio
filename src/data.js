@@ -172,7 +172,7 @@ export const PROJETOS = [
     fontes: 'Fraunces · IBM Plex Sans · IBM Plex Mono',
     cor: '#d9a441',
     fundo: '#12162a',
-    url: 'https://volver-beta.vercel.app',
-    privado: true,
+    url: null,
+    status: 'Acesso restrito',
   },
 ]
