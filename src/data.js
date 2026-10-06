@@ -35,8 +35,6 @@ export const SOBRE = {
         'Versionamento com Git/GitHub e deploy em produção na Vercel e no GitHub Pages.',
       ],
     },
-    { titulo: 'Apoio em Marketing Digital – Igreja', periodo: '2023–atual', itens: ['Colaboração em equipe, organização e comunicação.'] },
-    { titulo: 'Professor Particular de Redação', periodo: '2024–2025', itens: ['Atendimento individualizado, comunicação clara e resolução de problemas.'] },
   ],
   competencias: [
     'React', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Tailwind CSS', 'Firebase', 'PWA',
