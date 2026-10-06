@@ -19,7 +19,7 @@ export const PERFIL = {
 
 // Seção "Sobre", espelhando o currículo.
 export const SOBRE = {
-  texto: 'Busco uma vaga de Desenvolvedor Front-End para contribuir com o produto, com atenção a UX/UI. Hoje aprofundo Next.js, TypeScript e testes automatizados.',
+  texto: 'Busco uma vaga de Desenvolvedor Full-Stack para contribuir com o produto de ponta a ponta, da interface ao banco de dados, com atenção a UX/UI. Hoje aprofundo Next.js, TypeScript e testes automatizados.',
   formacao: [
     { titulo: 'Ciência da Computação', lugar: 'Universidade de Fortaleza (UNIFOR)', periodo: '2025–2028 · 4º semestre' },
     { titulo: 'Desenvolvimento Full-Stack', lugar: 'Digital College', periodo: 'Em andamento' },
