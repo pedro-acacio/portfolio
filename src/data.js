@@ -5,7 +5,7 @@
 
 export const PERFIL = {
   nome: 'Pedro Acácio',
-  titulo: 'Desenvolvedor Front-End',
+  titulo: 'Desenvolvedor Full-Stack',
   bio: 'Desenvolvedor full-stack e estudante de Ciência da Computação na UNIFOR. Crio landing pages e web apps com React, JavaScript, Tailwind CSS e Firebase para clientes reais — da identidade visual da marca até o site no ar.',
   cidade: 'Fortaleza, CE',
   github: 'https://github.com/pedro-acacio',
