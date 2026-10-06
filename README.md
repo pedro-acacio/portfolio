@@ -1,7 +1,7 @@
 # Portfólio — Pedro Acácio
 
 Portfólio com os projetos feitos até aqui: Mahut Arquitetura, Hifive Discos & Bar,
-Amor à Palavra, FJ Barbearia, NestWise e Volver.
+Amor à Palavra, FJ Barbearia, Blu Cookies Box, NestWise e Volver.
 
 ## Stack
 
@@ -27,5 +27,5 @@ A grade, os filtros e a página do projeto são gerados automaticamente.
 
 ## Contato
 
-Preencha `email`, `whatsapp` e `instagram` em `PERFIL` (`src/data.js`) para os
+Preencha `email`, `whatsapp`, `linkedin` e `instagram` em `PERFIL` (`src/data.js`) para os
 botões aparecerem na seção de contato — campos vazios ficam ocultos.

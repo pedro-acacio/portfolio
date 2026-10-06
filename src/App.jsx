@@ -62,6 +62,7 @@ function Contato() {
   const links = [
     PERFIL.whatsapp && ['WhatsApp', PERFIL.whatsapp],
     PERFIL.email && ['E-mail', `mailto:${PERFIL.email}`],
+    PERFIL.linkedin && ['LinkedIn', PERFIL.linkedin],
     PERFIL.instagram && ['Instagram', PERFIL.instagram],
     ['GitHub', PERFIL.github],
   ].filter(Boolean)

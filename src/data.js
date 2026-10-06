@@ -11,8 +11,9 @@ export const PERFIL = {
   github: 'https://github.com/pedro-acacio',
   // Preencha para exibir os botões de contato no site:
   email: '',
-  whatsapp: '', // ex.: 'https://wa.me/5585999999999'
-  instagram: '',
+  whatsapp: 'https://wa.me/5585996039656',
+  linkedin: 'https://www.linkedin.com/in/pedro-ac%C3%A1cio-72116/',
+  instagram: 'https://www.instagram.com/paneto__/',
 }
 
 export const TIPOS = ['Todos', 'Landing page', 'Aplicação web']
@@ -107,6 +108,28 @@ export const PROJETOS = [
     url: 'https://fj-barbearia.vercel.app',
   },
   {
+    slug: 'blucookies',
+    nome: 'Blu Cookies Box',
+    tipo: 'Landing page',
+    cliente: 'Loja de cookies artesanais',
+    local: 'Fortaleza | Mossoró',
+    ano: 2026,
+    resumo: 'Cardápio, carrinho e pedido pronto no WhatsApp — o cookie que vai mudar a química do seu cérebro.',
+    desafio: 'Uma loja que vendia pelo Instagram precisava receber pedidos organizados, sem pagar taxa de app de delivery e sem sair do WhatsApp que já usava.',
+    entregas: [
+      'Carrinho em etapas que monta a mensagem do pedido com itens, subtotal, entrega e contato',
+      'Carrinho salvo no navegador: o pedido não se perde se a página fechar',
+      'Endereço preenchido pelo CEP (ViaCEP) para entregas por Uber',
+      'Visual azul da marca com o mascote Blu, pensado primeiro para o celular',
+    ],
+    stack: ['HTML', 'CSS', 'JavaScript', 'Vercel'],
+    paleta: ['#f2f2f4', '#c9d3f0', '#3452a2', '#1e3272'],
+    fontes: 'Fraunces · Archivo · Gochi Hand',
+    cor: '#3452a2',
+    fundo: '#f2f2f4',
+    url: 'https://blu-cookies.vercel.app',
+  },
+  {
     slug: 'nestwise',
     nome: 'NestWise',
     tipo: 'Aplicação web',
@@ -150,5 +173,6 @@ export const PROJETOS = [
     cor: '#d9a441',
     fundo: '#12162a',
     url: 'https://volver-beta.vercel.app',
+    privado: true,
   },
 ]
