@@ -77,7 +77,7 @@ function Contato() {
             Vamos construir algo <em className="text-accent">juntos</em>?
           </h2>
           <p className="mt-6 max-w-xl text-lg leading-relaxed opacity-70">
-            Aberto a vagas de Desenvolvedor Front-End e a projetos freelance.
+            Aberto a vagas de Desenvolvedor Full-Stack e a projetos freelance.
           </p>
         </Reveal>
         <Reveal delay={120} className="mt-10 flex flex-wrap gap-3">
