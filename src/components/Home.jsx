@@ -215,13 +215,6 @@ function Sobre() {
               </ul>
               <p className="mt-4 text-sm text-muted">{SOBRE.idiomas}</p>
             </Reveal>
-
-            <Reveal delay={200}>
-              <h3 className="font-mono text-xs tracking-[0.2em] text-muted uppercase">Certificações</h3>
-              <ul className="mt-5 grid gap-2 text-sm">
-                {SOBRE.certificacoes.map((c) => <li key={c} className="border-b border-line pb-2">{c}</li>)}
-              </ul>
-            </Reveal>
           </div>
         </div>
       </div>

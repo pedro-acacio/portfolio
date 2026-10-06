@@ -40,12 +40,6 @@ export const SOBRE = {
     'React', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Tailwind CSS', 'Firebase', 'PWA',
     'Git & GitHub', 'Java · POO', 'UX/UI e design systems', 'Responsividade',
   ],
-  certificacoes: [
-    'Java: Aplicando a Orientação a Objetos – Alura',
-    'Lógica de Programação com JavaScript – Alura',
-    'Praticando JavaScript: Laços de Repetição – Alura',
-    'Começando em Programação – Alura',
-  ],
   idiomas: 'Inglês intermediário (leitura de documentação técnica)',
 }
 
