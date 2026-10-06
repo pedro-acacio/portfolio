@@ -16,26 +16,26 @@
 
 /* Escuro é o padrão; o claro só entra pelo botão de tema. */
 :root {
-  --bg: #0b110f;
-  --surface: #111a17;
-  --ink: #e6eee9;
-  --muted: #8b9c94;
-  --line: #1f2c27;
-  --accent: #3ccf8e;
-  --on-accent: #04130c;
-  --glow: rgba(60, 207, 142, 0.13);
+  --bg: #0e100c;
+  --surface: #151811;
+  --ink: #e5e3d7;
+  --muted: #929484;
+  --line: #272b20;
+  --accent: #8f9d63;
+  --on-accent: #0e100c;
+  --glow: rgba(143, 157, 99, 0.11);
   color-scheme: dark;
 }
 
 :root[data-theme="light"] {
-  --bg: #f3f6f4;
-  --surface: #ffffff;
-  --ink: #0d1a14;
-  --muted: #56665e;
-  --line: #d7e0db;
-  --accent: #127a4b;
-  --on-accent: #ffffff;
-  --glow: rgba(18, 122, 75, 0.09);
+  --bg: #f1f0e8;
+  --surface: #faf9f4;
+  --ink: #171a12;
+  --muted: #5e6153;
+  --line: #dad9cc;
+  --accent: #4b5320;
+  --on-accent: #f1f0e8;
+  --glow: rgba(75, 83, 32, 0.08);
   color-scheme: light;
 }
 
